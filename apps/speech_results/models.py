@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models import JSONField
-from config import settings
+from config.settings import base as settings
 
 
 class SpeechResults(models.Model):
