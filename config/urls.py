@@ -21,6 +21,7 @@ from config.settings import base as settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('apps.speech_results.urls'))
+    path('speech_results/', include('apps.speech_results.urls')),
+    path('', include('apps.core.urls')),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
