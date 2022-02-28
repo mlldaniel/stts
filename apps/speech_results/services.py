@@ -4,6 +4,7 @@ import subprocess
 from pathlib import Path
 import soundfile as sf
 from tempfile import NamedTemporaryFile
+from apps.speech_results.models import SpeechResults
 
 from django import forms
 from google.cloud import speech
@@ -151,11 +152,10 @@ def _request_for_speech_to_text_3(content):
     for result in response.results:
         try:
             # json format in model
-            results.append({
-                "transcript": result.alternatives[0].transcript,
-                "language_code": result.language_code,
-                "result_end_time": str(result.result_end_time),
-            })
+            results.append(SpeechResults.ApiResult(
+                transcript=result.alternatives[0].transcript,
+                language_code=result.language_code,
+                result_end_time=str(result.result_end_time)).__dict__)
         except:
             continue
         print("Transcript: {}".format(result.alternatives[0].transcript))
