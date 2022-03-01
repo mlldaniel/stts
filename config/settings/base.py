@@ -26,7 +26,11 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "https://intense-woodland-70855.herokuapp.com",
+    "127.0.0.1",
+    "localhost",
+]
 
 # Application definition
 DJANGO_APPS = [
@@ -143,6 +147,5 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"
 
 LOGIN_REDIRECT_URL = '/speech_results/'
-
 
 os.environ.setdefault('GOOGLE_APPLICATION_CREDENTIALS', env('GOOGLE_APPLICATION_CREDENTIALS_PATH'))
