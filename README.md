@@ -96,7 +96,7 @@ Add Config Vars
 - GOOGLE_APPLICATION_CREDENTIALS=google-credentials.json
 - GOOGLE_APPLICATION_CREDENTIALS_PATH=google-credentials.json
 - GOOGLE_CREDENTIALS={google credential}
-- SECRET_KEY
+- SECRET_KEY={secret key for django}
 
 Add Build Packs
 - https://github.com/Tirzono/heroku-buildpack-avconv.git
