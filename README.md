@@ -92,3 +92,5 @@ Add Buildpacks
 - heroku/python
 - https://github.com/buyersight/heroku-google-application-credentials-buildpack
 - https://github.com/heroku/heroku-buildpack-apt
+
+    $ python manage.py runserver --settings=config.settings.heroku
