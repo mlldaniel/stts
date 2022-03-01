@@ -64,11 +64,11 @@ Finally, you need to run migrations command and run the server. (virtual environ
 
 Migrations:
 
-    $ python manage.py migrate
+    $ python manage.py migrate --settings=config.settings.local
 
 Run the development server:
 
-    $ python manage.py runserver
+    $ python manage.py runserver --settings=config.settings.local
 
 ## Documentation
 
