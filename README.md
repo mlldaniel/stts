@@ -97,7 +97,7 @@ Add Config Vars
 - GOOGLE_CREDENTIALS
 - SECRET_KEY
 
-Add Buildpacks
+Add Build Packs
 - https://github.com/Tirzono/heroku-buildpack-avconv.git
 - heroku/python
 - https://github.com/buyersight/heroku-google-application-credentials-buildpack
