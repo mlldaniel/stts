@@ -87,6 +87,7 @@ Open /docs/_build/index.html to view them
 
 # 2. Heroku
 Create Postgresql Database
+It will automatically set DATABASE_URL
 
 Add Config Vars
 - DATABASE_URL
