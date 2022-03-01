@@ -27,9 +27,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = [
-    "https://intense-woodland-70855.herokuapp.com",
-    "127.0.0.1",
-    "localhost",
+    "*"
 ]
 
 # Application definition
