@@ -20,8 +20,11 @@ from django.urls import path, include
 from config.settings import base as settings
 
 urlpatterns = [
+    path('', include('apps.core.urls', namespace='core')),
+    path('accounts/', include('apps.accounts.urls')),
+    path('speech_results/', include('apps.speech_results.urls', namespace='speech_results')),
+
     path('admin/', admin.site.urls),
-    path('speech_results/', include('apps.speech_results.urls')),
-    path('', include('apps.core.urls')),
 ]
+
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

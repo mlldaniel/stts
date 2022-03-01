@@ -5,12 +5,12 @@ from . import services
 
 from .forms import CreateSpeechResultsForm
 from .models import SpeechResults
+from ..accounts.mixins import LoggedInOnlyView
 
 
-class CreateSpeechResultsView(FormView):
+class CreateSpeechResultsView(LoggedInOnlyView, FormView):
     form_class = CreateSpeechResultsForm
     template_name = 'speech_results/speech_results_create.html'
-
     success_url = "/"
 
     def form_valid(self, form):
@@ -23,7 +23,7 @@ class CreateSpeechResultsView(FormView):
         return redirect(reverse("speech_results:list"))
 
 
-class ListSpeechResultsView(ListView):
+class ListSpeechResultsView(LoggedInOnlyView, ListView):
     queryset = SpeechResults.objects.all()
     model = SpeechResults
     paginate_by = 12
@@ -33,8 +33,6 @@ class ListSpeechResultsView(ListView):
     template_name = 'speech_results/speech_results_list.html'
 
 
-class DetailSpeechResultsView(DetailView):
+class DetailSpeechResultsView(LoggedInOnlyView, DetailView):
     model = SpeechResults
     template_name = 'speech_results/speech_results_detail.html'
-
-
