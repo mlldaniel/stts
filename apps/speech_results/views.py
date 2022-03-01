@@ -51,7 +51,7 @@ class CreateSpeechResultsView(LoggedInOnlyView, FormView):
 
 
 class ListSpeechResultsView(LoggedInOnlyView, ListView):
-    queryset = SpeechResults.objects.all()
+    queryset = SpeechResults.objects.all().order_by('-id')
     model = SpeechResults
     paginate_by = 12
     paginate_orphans = 5

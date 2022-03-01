@@ -39,6 +39,7 @@ DJANGO_APPS = [
     'crispy_forms',
     'crispy_tailwind',
     'rest_framework',
+    'django_filters',
 ]
 
 PROJECT_APPS = [

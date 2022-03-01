@@ -5,6 +5,7 @@ from apps.speech_results.models import SpeechResults
 
 class SpeechResultSerializer(serializers.ModelSerializer):
     """ContractComment 계약서 댓글"""
+    user_name = serializers.ReadOnlyField(source='user.username')
 
     class Meta:
         verbose_name = verbose_name_plural = "Speech To Text Result"
