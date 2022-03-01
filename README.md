@@ -104,7 +104,7 @@ Add Build Packs
 - https://github.com/buyersight/heroku-google-application-credentials-buildpack
 - https://github.com/heroku/heroku-buildpack-apt
 
-Change Allowed host
+Change Allowed host to heroku generated one
 
 Run migrations with heroku config
 
