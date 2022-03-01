@@ -104,6 +104,8 @@ Add Build Packs
 - https://github.com/buyersight/heroku-google-application-credentials-buildpack
 - https://github.com/heroku/heroku-buildpack-apt
 
+Change Allowed host
+
 Run migrations with heroku config
 
     $ python manage.py runserver --settings=config.settings.heroku
