@@ -6,31 +6,26 @@
     Speech To Text - Create
 {% endblock body_title %}
 
+{% load tailwind_filters %}
 {% block content %}
     <div class="container lg:w-5/12 md:w-1/2 xl:w-1/4 mx-auto my-10 flex flex-col items-center border p-6 border-gray-400">
         <form method="POST" class="w-full" enctype="multipart/form-data">
             {% csrf_token %}
 
-            {#            {% if form.non_field_errors %}#}
-            {#                {% for error in form.non_field_errors %}#}
-            {#                    <span class="text-red-700 font-medium text-sm">{{ error }}</span>#}
-            {#                {% endfor %}#}
-            {#            {% endif %}#}
+            {% if not request.user.confirmed %}
+                <p>Sorry you are not allowed to use this feature.<br/>
+                    Please contact to mlldaniel.hwang@gmail.com</p>
+            {% else %}
+                {{ form.custom_errors }}
 
-            {% for field in form %}
-                {#                {% include 'mixins/room/room_input.html' with field=field %}#}
-                <div class="input w-full {% if field.errors %}has_error{% endif %}">
-                    {{ field.label }}
-                    {{ field }}
-                    {% if field.errors %}
-                        {% for error in field.errors %}
-                            <span class="text-red-700 font-medium text-sm">{{ error }}</span>
-                        {% endfor %}
-                    {% endif %}
-                </div>
-            {% endfor %}
-
-            <button class="btn bg-red-500 text-white"> Request for Speech To Text</button>
+                {{ form|crispy }}
+                <button type="submit"
+                        class="bg-blue-100 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                    Request for Speech To Text
+                </button>
+                <p class="py-2 text-red-400">Audio Must be mp4 format and less than 1min.</p>
+            {% endif %}
         </form>
+
     </div>
 {% endblock content %}

@@ -8,10 +8,10 @@
         </div>
     </td>
     <td class="px-6 py-4 whitespace-nowrap">
-        {% for group in result.result %}
-            <div class="text-sm text-gray-900">
-                {{ group.transcript }}
-            </div>
+        {% for apiResult in result.result %}
+            <p class="text-sm text-gray-900">
+                {{ apiResult.result_end_time }} : {{ apiResult.transcript }}
+            </p>
         {% endfor %}
 
     </td>
