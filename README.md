@@ -26,6 +26,9 @@ This project is for Favorite Medium coding test. It allow user to upload mp4 fil
 
 * Separated requirements files
 
+
+# 1. Local
+
 ## Installation
 
 First you have to install virtualenv based on python 3.9
@@ -80,3 +83,6 @@ To view them in html site. run the following command in /docs path
     $ make html
 
 Open /docs/_build/index.html to view them
+
+
+# 2. Heroku
