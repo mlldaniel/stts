@@ -80,9 +80,7 @@ def _get_audio_length(file) -> float:
 
 
 def _request_for_speech_to_text(content):
-    # outsite .env
-    print(os.environ.setdefault('GOOGLE_APPLICATION_CREDENTIALS',
-                                '/Users/gyedan/PycharmProjects/favorite_medium/speech-to-text/env/fm-stts-daeef083dcea.json'))
+
     try:
         # Instantiates a client
         client = speech.SpeechClient()

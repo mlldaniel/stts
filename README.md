@@ -1,23 +1,82 @@
+# Introduction
 
-avconv -i sample.mp4 -ac 1 -vn -f wav sample.wav
+This project is for Favorite Medium coding test. It allow user to upload mp4 file and transform the audio to text.
 
-=====
-export GOOGLE_APPLICATION_CREDENTIALS="KEY_PATH"
+- App name: Speech To Text
+- This project has Web and API.
 
+| Name                 | Description                                                       |
+| -------------------- | ----------------------------------------------------------------- |
+| Language             | Python 3.9                                                        |
+| UI/CSS               | HTML/Tailwind                                                     |
+| Framework            | Django 3.1.14 / Django Rest Framework 3.13.1                      |
+| Speech to Text api   | Cloud Speech-to-Text - Google CLoud                               |
 
+### Main features
 
-export GOOGLE_APPLICATION_CREDENTIALS="/Users/gyedan/PycharmProjects/favorite_medium/speech-to-text/env/fm-stts-daeef083dcea.json"
+* Separated dev and production settings(heroku)
 
-f = open("/Users/gyedan/PycharmProjects/favorite_medium/speech-to-text/tmp/sample.wav",'rb')
+* Request for Transform mp4 to text
 
-from apps.speech_results.service import request_for_speech_to_text
+* View Results in Web/Api
 
-https://storage.cloud.google.com/stts-bucket/sample.wav
+* User registration and logging/logout
 
-gs://stts-bucket/sample.wav
-gs://stts-bucket/sample_2.wav
+* Procfile for easy deployments
 
-https://storage.cloud.google.com/cloud-samples-data/speech/brooklyn_bridge.raw
-gs://cloud-samples-data/speech/brooklyn_bridge.raw
+* Separated requirements files
 
-"/Users/gyedan/PycharmProjects/favorite_medium/speech-to-text/tmp/sample_2.wav"
+## Installation
+
+First you have to install virtualenv based on python 3.9
+
+If your project is already in an existing python3 virtualenv first activate the environment and install all packages
+
+    $ pip install -r requirements.txt
+
+This assumes that `python3` is linked to valid installation of python 3 and that `pip` is installed and `pip3`is valid
+for installing python 3 packages.
+
+Prepare for GOOGLE_APPLICATION_CREDENTIALS from https://cloud.google.com/speech-to-text/docs/before-you-begin and download it somewhere safe
+
+Prepare for a Postgresql database
+
+## Config file
+
+First, you need to create .env in the root of the project folder
+
+    $ touch .env
+
+Fill the following values
+
+    DEBUG=True
+    #Django SECRET_KEY
+    SECRET_KEY= 
+    GOOGLE_APPLICATION_CREDENTIALS_PATH= {Path to certificat.json}
+    DATABASE_NAME=
+    DATABASE_USER=
+    DATABASE_PASS=
+    DATABASE_HOST=
+
+## Run
+
+Finally, you need to run migrations command and run the server. (virtual environment must be activated)
+
+Migrations:
+
+    $ python manage.py migrate
+
+Run the development server:
+
+    $ python manage.py runserver
+
+## Documentation
+
+Documentation file reside in /docs
+
+To view them in html site. run the following command in /docs path
+
+    $ cd docs
+    $ make html
+
+Open /docs/_build/index.html to view them
