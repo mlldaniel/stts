@@ -49,7 +49,7 @@ def _convert_mp4_to_wav(org_file):
     try:
         org_file_name = Path(org_file.name)
         dst_file_name = org_file_name.with_suffix('.wav')
-        cmdline = ['avconv',
+        cmdline = ['~/vendor/bin/avconv',
                    '-i',
                    org_file_name,
                    '-ac',
@@ -80,7 +80,6 @@ def _get_audio_length(file) -> float:
 
 
 def _request_for_speech_to_text(content):
-
     try:
         # Instantiates a client
         client = speech.SpeechClient()
