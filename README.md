@@ -109,3 +109,4 @@ Change Allowed host to heroku generated one
 Run migrations with heroku config
 
     $ python manage.py runserver --settings=config.settings.heroku
+    $ python manage.py createsuperuser --settings=config.settings.heroku
