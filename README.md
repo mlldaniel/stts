@@ -86,3 +86,9 @@ Open /docs/_build/index.html to view them
 
 
 # 2. Heroku
+
+Add Buildpacks
+- https://github.com/Tirzono/heroku-buildpack-avconv.git
+- heroku/python
+- https://github.com/buyersight/heroku-google-application-credentials-buildpack
+- https://github.com/heroku/heroku-buildpack-apt
