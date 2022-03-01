@@ -86,6 +86,16 @@ Open /docs/_build/index.html to view them
 
 
 # 2. Heroku
+Create Postgresql Database
+
+Add Config Vars
+- DATABASE_URL
+- DEBUG
+- DJANGO_SETTINGS_MODULE
+- GOOGLE_APPLICATION_CREDENTIALS
+- GOOGLE_APPLICATION_CREDENTIALS_PATH
+- GOOGLE_CREDENTIALS
+- SECRET_KEY
 
 Add Buildpacks
 - https://github.com/Tirzono/heroku-buildpack-avconv.git
