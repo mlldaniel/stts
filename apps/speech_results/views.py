@@ -59,10 +59,6 @@ class ListSpeechResultsView(LoggedInOnlyView, ListView):
     context_object_name = "results"
     template_name = 'speech_results/speech_results_list.html'
 
-    def get_queryset(self):
-        user = self.request.user
-        return super().get_queryset().filter(user=user)
-
 
 class DetailSpeechResultsView(LoggedInOnlyView, DetailView):
     model = SpeechResults

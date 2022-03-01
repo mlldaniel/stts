@@ -25,6 +25,7 @@ urlpatterns = [
     path('speech_results/', include('apps.speech_results.urls', namespace='speech_results')),
 
     path('admin/', admin.site.urls),
+    path('api/', include('api.speech_results.urls'))
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

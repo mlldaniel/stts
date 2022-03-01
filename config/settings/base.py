@@ -38,6 +38,7 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'crispy_tailwind',
+    'rest_framework',
 ]
 
 PROJECT_APPS = [

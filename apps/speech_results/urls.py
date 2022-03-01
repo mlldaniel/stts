@@ -7,5 +7,4 @@ urlpatterns = [
     path('', views.ListSpeechResultsView.as_view(), name="list"),
     # TODO view detail page
     # path('<int:pk>', views.DetailSpeechResultsView.as_view(), name="detail"),
-
 ]
