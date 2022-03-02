@@ -1,6 +1,9 @@
 api package
 ===========
 
+It is package that runs rest api using django rest framework.
+Currently there is only speech_results.
+
 Subpackages
 -----------
 

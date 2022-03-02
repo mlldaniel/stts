@@ -1,6 +1,9 @@
 apps.core package
 =================
 
+- Handle landing page.
+- Could be utilized for basic pages such as About page.
+
 Subpackages
 -----------
 
@@ -8,6 +11,8 @@ Subpackages
    :maxdepth: 4
 
    apps.core.migrations
+
+DB migrations files
 
 Submodules
 ----------
@@ -20,6 +25,8 @@ apps.core.admin module
    :undoc-members:
    :show-inheritance:
 
+Admin page setting(Currently not used)
+
 apps.core.apps module
 ---------------------
 
@@ -27,6 +34,8 @@ apps.core.apps module
    :members:
    :undoc-members:
    :show-inheritance:
+
+Config file for current app
 
 apps.core.models module
 -----------------------
@@ -36,6 +45,8 @@ apps.core.models module
    :undoc-members:
    :show-inheritance:
 
+Currently not used
+
 apps.core.tests module
 ----------------------
 
@@ -44,13 +55,7 @@ apps.core.tests module
    :undoc-members:
    :show-inheritance:
 
-apps.core.urls module
----------------------
-
-.. automodule:: apps.core.urls
-   :members:
-   :undoc-members:
-   :show-inheritance:
+Currently not used
 
 apps.core.views module
 ----------------------
@@ -60,10 +65,5 @@ apps.core.views module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
 
-.. automodule:: apps.core
-   :members:
-   :undoc-members:
-   :show-inheritance:
+Handle LandingPage View

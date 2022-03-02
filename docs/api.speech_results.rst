@@ -1,37 +1,20 @@
 api.speech\_results package
 ===========================
 
-Submodules
-----------
+Basic structure
 
-api.speech\_results.serializers module
---------------------------------------
 
-.. automodule:: api.speech_results.serializers
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. code-block:: bash
 
-api.speech\_results.urls module
--------------------------------
+    .
+    ├── serializers.py
+    ├── urls.py
+    └── views.py
 
-.. automodule:: api.speech_results.urls
-   :members:
-   :undoc-members:
-   :show-inheritance:
 
-api.speech\_results.views module
---------------------------------
+-  Views are based on ModelViewSet
+    - 3 types of filter used = (DjangoFilterBackend, OrderingFilter, SearchFilter)
+    - Authenticated user only
+-  Serializer are based on ModelSerializer
+-  No model here, Views/Serializer is using model from apps.speech_results.model
 
-.. automodule:: api.speech_results.views
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: api.speech_results
-   :members:
-   :undoc-members:
-   :show-inheritance:

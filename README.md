@@ -26,8 +26,7 @@ This project is for Favorite Medium coding test. It allow user to upload mp4 fil
 
 * Separated requirements files
 
-
-# 1. Local
+# 1. Local Execution
 
 ## Installation
 
@@ -40,7 +39,8 @@ If your project is already in an existing python3 virtualenv first activate the 
 This assumes that `python3` is linked to valid installation of python 3 and that `pip` is installed and `pip3`is valid
 for installing python 3 packages.
 
-Prepare for GOOGLE_APPLICATION_CREDENTIALS from https://cloud.google.com/speech-to-text/docs/before-you-begin and download it somewhere safe
+Prepare for GOOGLE_APPLICATION_CREDENTIALS from https://cloud.google.com/speech-to-text/docs/before-you-begin and
+download it somewhere safe
 
 Prepare for a Postgresql database
 
@@ -72,24 +72,14 @@ Migrations:
 Run the development server:
 
     $ python manage.py runserver --settings=config.settings.local
+    $ python manage.py createsuperuser --settings=config.settings.local
 
-## Documentation
+# 2. Heroku Execution
 
-Documentation file reside in /docs
-
-To view them in html site. run the following command in /docs path
-
-    $ cd docs
-    $ make html
-
-Open /docs/_build/index.html to view them
-
-
-# 2. Heroku
-Create Postgresql Database
-It will automatically set DATABASE_URL
+Create Postgresql Database It will automatically set DATABASE_URL
 
 Add Config Vars
+
 - DATABASE_URL
 - DEBUG=True
 - DJANGO_SETTINGS_MODULE=config.settings.heroku
@@ -99,6 +89,7 @@ Add Config Vars
 - SECRET_KEY={secret key for django}
 
 Add Build Packs
+
 - heroku/python
 - https://github.com/buyersight/heroku-google-application-credentials-buildpack
 - https://github.com/heroku/heroku-buildpack-apt
@@ -110,3 +101,14 @@ Run migrations with heroku config
 
     $ python manage.py runserver --settings=config.settings.heroku
     $ python manage.py createsuperuser --settings=config.settings.heroku
+
+# Documentation
+
+Documentation file reside in /docs
+
+To view them in html site. run the following command in /docs path
+
+    $ cd docs
+    $ make html
+
+Open /docs/_build/index.html to view them

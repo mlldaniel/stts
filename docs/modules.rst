@@ -1,10 +1,12 @@
-speech-to-text
-==============
+speech-to-text :
+================
+
+Here Django-specific code structures are explained further from the previous simple structure description.
+
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 3
 
+   config
    api
    apps
-   config
-   manage

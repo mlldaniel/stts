@@ -1,16 +1,19 @@
 apps.accounts package
 =====================
 
+- Inherit default AbstractUser
+- Manage user model(name account)
+
+
 Subpackages
 -----------
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 1
 
-   apps.accounts.migrations
+   apps.accounts.migrations.rst
 
-Submodules
-----------
+DB migrations files
 
 apps.accounts.admin module
 --------------------------
@@ -20,6 +23,8 @@ apps.accounts.admin module
    :undoc-members:
    :show-inheritance:
 
+Admin page setting
+
 apps.accounts.apps module
 -------------------------
 
@@ -27,6 +32,8 @@ apps.accounts.apps module
    :members:
    :undoc-members:
    :show-inheritance:
+
+Config file for current app
 
 apps.accounts.forms module
 --------------------------
@@ -36,6 +43,8 @@ apps.accounts.forms module
    :undoc-members:
    :show-inheritance:
 
+Form related to account(user) model currently there is only on form RegisterForm, which is used to register
+
 apps.accounts.mixins module
 ---------------------------
 
@@ -43,6 +52,13 @@ apps.accounts.mixins module
    :members:
    :undoc-members:
    :show-inheritance:
+
+
+Mixin for views to check Logged in user or logged out user
+- LoggedOutOnlyView
+- LoggedInOnlyView
+
+
 
 apps.accounts.models module
 ---------------------------
@@ -52,13 +68,8 @@ apps.accounts.models module
    :undoc-members:
    :show-inheritance:
 
-apps.accounts.tests module
---------------------------
+User account model reside here
 
-.. automodule:: apps.accounts.tests
-   :members:
-   :undoc-members:
-   :show-inheritance:
 
 apps.accounts.urls module
 -------------------------
@@ -68,6 +79,8 @@ apps.accounts.urls module
    :undoc-members:
    :show-inheritance:
 
+urls file
+
 apps.accounts.views module
 --------------------------
 
@@ -75,6 +88,8 @@ apps.accounts.views module
    :members:
    :undoc-members:
    :show-inheritance:
+
+View to Register, for login or logout views django.contrib.auth is used.
 
 Module contents
 ---------------
