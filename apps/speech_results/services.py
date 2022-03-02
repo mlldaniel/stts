@@ -85,9 +85,6 @@ def _convert_mp4_to_wav(org_file):
 def _get_audio_length(file) -> float:
     try:
         f = sf.SoundFile(file)
-        print('samples = {}'.format(f.frames))
-        print('sample rate = {}'.format(f.samplerate))
-        print('seconds = {}'.format(f.frames / f.samplerate))
         seconds = f.frames / f.samplerate
     except Exception as ex:
         raise AudioLengthIrretrievableError(ex)
