@@ -53,7 +53,7 @@ def _convert_mp4_to_wav(org_file):
         cmdline = ['pwd',]
         subprocess.call(cmdline)
 
-        cmdline = ['./avconv',
+        cmdline = ['bin/avconv',
                    '-i',
                    org_file_name,
                    '-ac',
