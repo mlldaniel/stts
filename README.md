@@ -102,17 +102,7 @@ Add Build Packs
 - heroku/python
 - https://github.com/buyersight/heroku-google-application-credentials-buildpack
 - https://github.com/heroku/heroku-buildpack-apt
-
-Something todo manually
-https://github.com/danielinspring/avconv-buildpack
-
-
-    $ cd $1
-    $ # download the binary (-O) silently (-s)
-    $ curl https://github.com/CrowdDevelopment/avconv-binary/raw/master/avconv.tar.gz -s -O -L
-    $ # untar the binary to the directory we want
-    $ tar -C vendor -xvf avconv.tar.gz
-    $ mv ./vendor/bin/avconv ./apps/speech_results/
+- https://github.com/MarmosetMusic/avconv-buildpack
 
 Change Allowed host to heroku generated one
 

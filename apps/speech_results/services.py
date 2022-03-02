@@ -50,10 +50,7 @@ def _convert_mp4_to_wav(org_file):
         org_file_name = Path(org_file.name)
         dst_file_name = org_file_name.with_suffix('.wav')
 
-        cmdline = ['pwd',]
-        subprocess.call(cmdline)
-
-        cmdline = ['bin/avconv',
+        cmdline = ['avconv',
                    '-i',
                    org_file_name,
                    '-ac',
@@ -64,8 +61,23 @@ def _convert_mp4_to_wav(org_file):
                    dst_file_name]
 
         subprocess.call(cmdline)
-    except OSError as err:
-        raise ConvertAudioToWavError(err)
+
+    except OSError:
+        # second try if it is heroku
+        try:
+            cmdline = ['bin/avconv',
+                       '-i',
+                       org_file_name,
+                       '-ac',
+                       ' 1',
+                       '-vn',
+                       '-f',
+                       'wav',
+                       dst_file_name]
+
+            subprocess.call(cmdline)
+        except OSError as err:
+            raise ConvertAudioToWavError(err)
 
     return dst_file_name
 
