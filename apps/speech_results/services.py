@@ -49,6 +49,10 @@ def _convert_mp4_to_wav(org_file):
     try:
         org_file_name = Path(org_file.name)
         dst_file_name = org_file_name.with_suffix('.wav')
+
+        cmdline = ['pwd',]
+        subprocess.call(cmdline)
+
         cmdline = ['~/vendor/bin/avconv',
                    '-i',
                    org_file_name,
